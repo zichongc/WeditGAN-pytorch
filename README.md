@@ -3,7 +3,7 @@ An unofficial implementation of **WeditGAN: Few-shot Image Generation via Latent
 
 (Incomplete implementation)
 
-[\[paper\]](https://arxiv.org/abs/2305.06671)
+[[paper]](https://arxiv.org/abs/2305.06671)
 
 ![](./assert/front.png)
 
@@ -27,7 +27,6 @@ You can fine-tune the generator on a few-shot dataset following these steps:
 This repository provides 3 preprocessed (10-shot) datasets (resolution 256x256) and placed in `./datasets`:
 * pixar
 * babies
-* amedeo modigliani
 
 If you desire fine-tuning on your customized datasets, please preprocessing them (face align) in advance. Place them in a folder `[folder_name]` and move to `./datasets` suggestively.
 
@@ -39,7 +38,7 @@ python ./dataset_tool.py --source=./datasets/[folder_name] --dest=./datasets/[fo
 
 For example, 
 ```shell
-python ./dataset_tool.py --source=./datasets/Amedeo_Modigliani/aligned --dest=./datasets/Amedeo_Modigliani.zip --height=256 --width=256
+python ./dataset_tool.py --source=./datasets/babies/aligned --dest=./datasets/babies.zip --height=256 --width=256
 ```
 
 ### Fine-tuning the generator
@@ -51,7 +50,7 @@ python wedit_train.py --network=[CHECKPOINTS PATH] --data=[DATA PATH] --output_d
 For example, 
 ```shell
 python wedit_train.py --network=./checkpoints/ffhq70k-paper256-ada-bcr.pkl \ 
-    --data=./datasets/Amedeo_Modigliani.zip --output_dir=./outputs/AM --resolution=256
+    --data=./datasets/babies.zip --output_dir=./outputs/BB --resolution=256
 ```
 
 
@@ -65,11 +64,11 @@ python wedit_test.py --network=[CHECKPOINTS PATH] --ft_network=[FTNETWORK PATH] 
 
 For example, 
 ```shell
-python wedit_test.py --network=./checkpoints/ffhq70k-paper256-ada-bcr.pkl --ft_network=./outputs/AM/network-snapshot-000030.pkl \
-    --dw=./outputs/AM/network-snapshot-000030-w.pkl --output=./outputs/AM --num=16 --resolution=256 --seed=2023
+python wedit_test.py --network=./checkpoints/ffhq70k-paper256-ada-bcr.pkl --ft_network=./outputs/BB/network-snapshot-000030.pkl \
+    --dw=./outputs/BB/network-snapshot-000030-w.pkl --output=./outputs/BB --num=16 --resolution=256 --seed=2023
 ```
 
 ## Acknowledgements
 Code is based on NVlabs's [stylegan2-ada-pytorch](https://github.com/NVlabs/stylegan2-ada-pytorch)
 
-@author Zichong CHen
+@author Zichong Chen

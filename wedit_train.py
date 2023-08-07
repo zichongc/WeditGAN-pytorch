@@ -30,10 +30,10 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--network', type=str, default='./checkpoints/ffhq70k-paper256-ada-bcr.pkl')
     parser.add_argument('--data', type=str,
-                        default='./datasets/Amedeo_Modigliani.zip'
+                        default='./datasets/pixar.zip'
                         )
     parser.add_argument('--output_dir', type=str,
-                        default='./outputs/AM'
+                        default='./outputs/PX'
                         )
     parser.add_argument('--cond', type=bool, default=False)
     parser.add_argument('--mirror', type=bool, default=False)
