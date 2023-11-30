@@ -5,7 +5,7 @@ An unofficial implementation of **WeditGAN: Few-shot Image Generation via Latent
 
 [[paper]](https://arxiv.org/abs/2305.06671)
 
-![](./assert/front.png)
+![](./assets/front.png)
 
 ## Requirements
 * Python 3.8 and PyTorch 1.11.0. See https://pytorch.org/ for PyTorch install instructions.
